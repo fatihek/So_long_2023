@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:14:45 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/18 17:41:10 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/03/20 10:12:00 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	main(int argc, char **argv)
 	mlx_loop_hook(vars.mlx, anim, &vars);
 	mlx_hook(vars.win, 2, 0, player_move, &vars);
 	map_control_dsl(&vars);
-	system("leaks so_long");
 	mlx_loop(vars.mlx);
 }
 

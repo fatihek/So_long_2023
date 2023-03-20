@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:19 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/18 16:46:06 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/03/20 10:09:43 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,25 @@ void	enemy_down(t_vars *vars)
 
 void	enemy_patrol(t_vars *vars)
 {
-	if (vars->map[vars->enemy_i][vars->enemy_j + 1] != '1')
+	if (vars->enemy_i != 0 && vars->enemy_i != 0)
 	{
-		while (vars->map[vars->enemy_i][vars->enemy_j + 1] != '1'
-			&& vars->map[vars->enemy_i][vars->enemy_j + 1] != 'C')
+		if (vars->map[vars->enemy_i][vars->enemy_j + 1] != '1')
 		{
-			enemy_up(vars);
+			while (vars->map[vars->enemy_i][vars->enemy_j + 1] != '1'
+				&& vars->map[vars->enemy_i][vars->enemy_j + 1] != 'C'
+				&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'V')
+			{
+				enemy_up(vars);
+			}
 		}
-	}
-	else if (vars->map[vars->enemy_i][vars->enemy_j - 1] != '1')
-	{
-		while (vars->map[vars->enemy_i][vars->enemy_j - 1] != '1'
-			&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'C')
+		else if (vars->map[vars->enemy_i][vars->enemy_j - 1] != '1')
 		{
-			enemy_down(vars);
+			while (vars->map[vars->enemy_i][vars->enemy_j - 1] != '1'
+				&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'C'
+				&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'V')
+			{
+				enemy_down(vars);
+			}
 		}
 	}
 }
