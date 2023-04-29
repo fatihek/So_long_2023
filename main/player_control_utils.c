@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:14:58 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/18 15:17:02 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/04/29 10:35:03 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ void	exit_door(t_vars *vars)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exiter_img,
 			vars->x, vars->y);
-		ft_printf("You Rock!\n");
+		ft_printf("\nYou Rock!\n");
 		exit(0);
 	}
 	else if (vars->map[vars->i][vars->j] == 'E'

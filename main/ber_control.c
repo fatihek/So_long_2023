@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:23 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/20 10:10:34 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/04/29 10:54:49 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	mapfree_control(t_vars *vars)
 
 	fd = open(vars->map_name, O_RDONLY);
 	tmp = get_next_line(fd);
-	if (tmp == NULL)
+	if (tmp == '\0')
 	{
 		free_mapfree(vars);
 		exit(ft_printf("\033[0;31mError\nWrong Map!\n"));
