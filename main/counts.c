@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:21 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/20 10:10:38 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:17:46 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	counts(t_vars *vars)
 {
+	vars->path.collectible_coin = 0;
 	vars->cants.coin_count = 0;
 	vars->cants.player_count = 0;
 	vars->cants.exit_count = 0;
 	vars->cants.enemy_count = 0;
-	vars->collected_coin = 0;
 	vars->path.spaces = 0;
 	vars->collected_coin = 0;
 	vars->move_count = 0;

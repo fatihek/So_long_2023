@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 15:32:34 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/04/29 10:29:11 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:22:51 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	upload_sprites(t_vars *vars)
 	int	x;
 	int	y;
 
-	x = vars->len_width * IMG_SIZE;
+	x = vars->width * IMG_SIZE;
 	y = vars->len_height * IMG_SIZE;
 	vars->s.cs[0] = mlx_xpm_file_to_image(vars->mlx, "./images/c0.xpm", &x, &y);
 	vars->s.cs[1] = mlx_xpm_file_to_image(vars->mlx, "./images/c1.xpm", &x, &y);

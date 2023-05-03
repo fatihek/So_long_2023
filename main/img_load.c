@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:16 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/18 15:17:21 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:21:09 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	img_load(t_vars *vars)
 	int	x;
 	int	y;
 
-	x = vars->len_width * IMG_SIZE;
+	x = vars->width * IMG_SIZE;
 	y = vars->len_height * IMG_SIZE;
 	vars->m.b = mlx_xpm_file_to_image(vars->mlx, "./images/bg.xpm",
 			&x, &y);
@@ -43,6 +43,6 @@ void	img_load(t_vars *vars)
 
 void	upload(t_vars *vars)
 {
-	vars->len_width = horizontal_len(vars);
+	vars->width = horizontal_len(vars);
 	vars->len_height = vertical_len(vars->map_name);
 }

@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:19 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/20 10:09:43 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:39:02 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void	enemy_patrol(t_vars *vars)
 		{
 			while (vars->map[vars->enemy_i][vars->enemy_j + 1] != '1'
 				&& vars->map[vars->enemy_i][vars->enemy_j + 1] != 'C'
-				&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'V')
+				&& vars->map[vars->enemy_i][vars->enemy_j + 1] != 'V'
+				&& vars->map[vars->enemy_i][vars->enemy_j + 1] != 'E')
 			{
 				enemy_up(vars);
 			}
@@ -63,7 +64,8 @@ void	enemy_patrol(t_vars *vars)
 		{
 			while (vars->map[vars->enemy_i][vars->enemy_j - 1] != '1'
 				&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'C'
-				&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'V')
+				&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'V'
+				&& vars->map[vars->enemy_i][vars->enemy_j - 1] != 'E')
 			{
 				enemy_down(vars);
 			}

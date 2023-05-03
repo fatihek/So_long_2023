@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:23 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/04/29 10:54:49 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/03 12:09:02 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	rectangular(t_vars *vars, int i, int j)
 	int	area;
 	int	count;
 
-	area = (vars->len_height) * (vars->len_width);
+	area = (vars->len_height) * (vars->width);
 	count = 0;
 	while (vars->map[i])
 	{
@@ -110,7 +110,10 @@ void	map_control_dsl(t_vars *vars)
 	control_components(vars->map, vars);
 	rectangular(vars, 0, 0);
 	path_finder(vars->i, vars->j, vars);
-	if (vars->path.spaces >= 0 || vars->cants.coin_count == 0)
+	ft_printf("%d", vars->path.collectible_coin);
+	ft_printf("\n%d", vars->cants.coin_count);
+	if (vars->cants.coin_count == 0
+		|| vars->path.collectible_coin != vars->cants.coin_count)
 	{
 		ft_printf("\033[0;31mError\nImpossible to finish the game!\n");
 		free_wrong(vars);

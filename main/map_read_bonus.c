@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:06 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/04/29 10:41:48 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:22:17 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	map_read_bonus(t_vars *vars)
 	vars->path.imap = (int **)malloc(sizeof(int *) * (vars->len_height + 1));
 	while (i < vars->len_height)
 	{
-		vars->path.imap[i] = malloc(sizeof(int) * (vars->len_width + 1));
+		vars->path.imap[i] = malloc(sizeof(int) * (vars->width + 1));
 		j = 0;
-		while (j < vars->len_width)
+		while (j < vars->width)
 		{
 			if (i == vars->i && j == vars->j)
 				vars->path.imap[i][j] = 1;

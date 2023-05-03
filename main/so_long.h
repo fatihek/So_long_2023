@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:14:38 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/18 17:09:11 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/02 12:19:58 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ typedef struct s_vars
 	char		sprites[6];
 	void		*mlx;
 	void		*win;
-	int			len_width;
+	int			width;
 	int			len_height;
 	int			map_height;
 	int			map_width;
