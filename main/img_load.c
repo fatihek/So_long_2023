@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:16 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/02 12:21:09 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/10 11:33:53 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,26 @@ void	upload(t_vars *vars)
 {
 	vars->width = horizontal_len(vars);
 	vars->len_height = vertical_len(vars->map_name);
+}
+
+void	control(t_vars *vars)
+{
+	if ((vars->m.b == NULL || vars->m.w == NULL) || (vars->m.player_img == NULL
+			|| vars->m.player_back_img == NULL)
+		|| (vars->m.player_left_img == NULL || vars->m.player_right_img == NULL)
+		|| (vars->m.c == NULL || vars->m.e == NULL)
+		|| (vars->m.exiter_img == NULL || vars->m.enemy_img == NULL))
+	{
+		ft_printf("\033[0;31mError\nInvalid Image!\n");
+		free(vars->m.b);
+		free(vars->m.w);
+		free(vars->m.player_img);
+		free(vars->m.player_back_img);
+		free(vars->m.player_left_img);
+		free(vars->m.player_right_img);
+		free(vars->m.e);
+		free(vars->m.exiter_img);
+		free(vars->m.enemy_img);
+		exit(1);
+	}
 }

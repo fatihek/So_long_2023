@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:21 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/03 12:17:46 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:43:43 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	counts(t_vars *vars)
 	vars->collected_coin = 0;
 	vars->move_count = 0;
 	vars->s.aspeed = 0;
-	vars->path.imap = vars->map;
 	c_coin(vars, 0, 0);
 	c_player(vars, 0, 0);
 	c_exit(vars, 0, 0);
@@ -39,12 +38,7 @@ void	c_coin(t_vars *vars, int i, int j)
 		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
 			if (vars->map[i][j] == 'C')
-			{
 				vars->cants.coin_count++;
-				vars->path.spaces++;
-			}
-			if (vars->map[i][j] == '0')
-				vars->path.spaces++;
 			j++;
 		}
 		i++;
@@ -68,6 +62,7 @@ void	c_player(t_vars *vars, int i, int j)
 	if (vars->cants.player_count != 1)
 	{
 		ft_printf("There should only be one player!");
+		free_exit(vars);
 		exit(0);
 	}
 }
@@ -89,6 +84,9 @@ void	c_exit(t_vars *vars, int i, int j)
 	if (vars->cants.exit_count != 1)
 	{
 		ft_printf("There should only be one exit door!");
+		free_exit(vars);
 		exit(0);
 	}
 }
+
+// valgrind 

@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:14:58 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/04/29 10:35:03 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:42:15 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	move_up(t_vars *vars)
 			vars->map[vars->i][vars->j] = '0';
 			vars->collected_coin++;
 		}
+		ft_printf("\n%d", vars->move_count);
 	}
 }
 
@@ -63,6 +64,7 @@ void	move_down(t_vars *vars)
 			vars->map[vars->i][vars->j] = '0';
 			vars->collected_coin++;
 		}
+		ft_printf("\n%d", vars->move_count);
 	}
 }
 
@@ -90,6 +92,7 @@ void	move_right(t_vars *vars)
 			vars->map[vars->i][vars->j] = '0';
 			vars->collected_coin++;
 		}
+		ft_printf("\n%d", vars->move_count);
 	}
 }
 
@@ -117,6 +120,7 @@ void	move_left(t_vars *vars)
 			vars->map[vars->i][vars->j] = '0';
 			vars->collected_coin++;
 		}
+		ft_printf("\n%d", vars->move_count);
 	}
 }
 

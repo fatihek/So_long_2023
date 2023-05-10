@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:14:55 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/18 17:41:36 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:39:14 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ int	player_move(int keycode, t_vars *vars)
 		move_left(vars);
 		exit_door(vars);
 	}
-	vars->mover = ft_itoa(vars->move_count);
-	mlx_put_image_to_window(vars->mlx, vars->win, vars->m.w, 0, 0);
-	mlx_string_put(vars->mlx, vars->win, 50, 50, 0xFFFFFF, vars->mover);
+	return (1);
 }

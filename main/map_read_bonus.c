@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:06 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/02 12:22:17 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:41:07 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	map_read_bonus(t_vars *vars)
 		vars->path.imap[i][j] = '\0';
 		i++;
 	}
-	vars->path.imap[i] = '\0';
+	vars->path.imap[i] = NULL;
 }

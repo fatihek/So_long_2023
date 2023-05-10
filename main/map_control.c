@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:10 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/02 12:21:50 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:54:44 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,28 @@ int	map_control(t_vars *vars)
 		if (vars->map[0][i] != '1' || vars->map[vars->len_height
 			- 1][i] != '1')
 		{
-			ft_printf("Up or down edges not surrounded by walls");
 			free(ptr);
-			exit(1);
+			error_center_top_down(vars);
 		}
 		else if (vars->map[i][0] != '1' || vars->map[i][vars->width - 1] != '1')
 		{
-			ft_printf("Right or left edges are not surrounded by walls");
 			free(ptr);
-			exit(1);
+			error_center_left_right(vars);
 		}
 		i++;
 		free(ptr);
 	}
+	return (0);
+}
+
+void	error_center_top_down(t_vars *vars)
+{
+	ft_printf("Up or down edges not surrounded by walls");
+	exit(1);
+}
+
+void	error_center_left_right(t_vars *vars)
+{
+	ft_printf("Right or left edges are not surrounded by walls");
+	exit(1);
 }

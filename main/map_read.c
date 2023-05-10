@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:03 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/03/18 15:05:05 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:39:56 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	map_read(t_vars *vars)
 		vars->map[i] = get_next_line(fd);
 		i++;
 	}
-	vars->map[i] = '\0';
+	vars->map[i] = NULL;
 	close(fd);
 }
 

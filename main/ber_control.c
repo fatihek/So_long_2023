@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:23 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/03 12:09:02 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:40:35 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	mapfree_control(t_vars *vars)
 
 	fd = open(vars->map_name, O_RDONLY);
 	tmp = get_next_line(fd);
-	if (tmp == '\0')
+	if (tmp == NULL)
 	{
 		free_mapfree(vars);
 		exit(ft_printf("\033[0;31mError\nWrong Map!\n"));
@@ -110,8 +110,6 @@ void	map_control_dsl(t_vars *vars)
 	control_components(vars->map, vars);
 	rectangular(vars, 0, 0);
 	path_finder(vars->i, vars->j, vars);
-	ft_printf("%d", vars->path.collectible_coin);
-	ft_printf("\n%d", vars->cants.coin_count);
 	if (vars->cants.coin_count == 0
 		|| vars->path.collectible_coin != vars->cants.coin_count)
 	{

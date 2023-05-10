@@ -6,15 +6,17 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:14:38 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/02 12:19:58 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 13:32:43 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "../libs/libft/libft.h"
+# include "../libs/ft_printf/libft/libft.h"
 # include "../libs/minilibx/mlx.h"
+# include "../libs/ft_printf/ft_printf.h"
+# include "../libs/get_next_line/get_next_line.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -86,7 +88,6 @@ typedef struct s_vars
 	int			j;
 }				t_vars;
 
-void			enemy_patrol(t_vars *vars);
 void			exit_door(t_vars *vars);
 void			map_read(t_vars *vars);
 void			image_create(t_vars *vars);
@@ -102,8 +103,6 @@ void			put_image(t_vars *vars, int i, int j);
 void			put_pl(t_vars *vars, int i, int j);
 void			put_en(t_vars *vars, int i, int j);
 void			put_ce(t_vars *vars, int i, int j);
-void			enemy_up(t_vars *vars);
-void			enemy_down(t_vars *vars);
 void			map_control_dsl(t_vars *vars);
 void			mapfree_control(t_vars *vars);
 void			rectangular(t_vars *vars, int i, int j);
@@ -120,16 +119,17 @@ void			free_map(t_vars *vars);
 void			free_exit(t_vars *vars);
 void			free_wrong(t_vars *vars);
 void			free_mapfree(t_vars *vars);
+void			error_center_top_down(t_vars *vars);
+void			error_center_left_right(t_vars *vars);
+void			control(t_vars *vars);
 
 void			put_coin(t_vars *vars, int i, int j, int k);
 void			sprite_a(t_vars *vars);
-void			upload_sprites(t_vars *vars);
 
 int				path_up(int y, int x, t_vars *vars);
 int				path_right(int y, int x, t_vars *vars);
 int				path_left(int y, int x, t_vars *vars);
 
-int				anim(t_vars *vars);
 int				vertical_len(char *map_name);
 int				horizontal_len(t_vars *vars);
 int				map_control(t_vars *vars);

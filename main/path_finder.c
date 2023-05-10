@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:00 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/03 12:20:16 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 11:39:29 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	path_finder(int y, int x, t_vars *vars)
 	path_up(y, x, vars);
 	path_right(y, x, vars);
 	path_left(y, x, vars);
+	return (1);
 }
 
 int	path_up(int y, int x, t_vars *vars)

@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:14:45 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/03 12:17:40 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/04 14:14:07 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	main(int argc, char **argv)
 {
 	t_vars	vars;
 
+	if (argc != 2)
+		exit(ft_printf("\033[0;31mError\nInvalid number of arguments!\n"));
 	vars.mlx = mlx_init();
 	vars.map_name = argv[1];
 	map_read(&vars);
@@ -24,13 +26,12 @@ int	main(int argc, char **argv)
 	map_control(&vars);
 	player_locate(&vars);
 	map_read_bonus(&vars);
-	upload_sprites(&vars);
 	vars.win = mlx_new_window(vars.mlx, vars.width * IMG_SIZE,
 			vars.len_height * IMG_SIZE, "So_Long");
 	mlx_hook (vars.win, 17, 0, press_close_key, &vars);
 	img_load(&vars);
+	control(&vars);
 	put_image(&vars, 0, 0);
-	mlx_loop_hook(vars.mlx, anim, &vars);
 	mlx_hook(vars.win, 2, 0, player_move, &vars);
 	map_control_dsl(&vars);
 	mlx_loop(vars.mlx);
@@ -39,6 +40,7 @@ int	main(int argc, char **argv)
 int	press_close_key(t_vars *vars)
 {
 	ft_printf("\n\033[0;35mGame over! Buck needed money!\033[0m\n");
+	free_exit(vars);
 	exit(1);
 }
 
