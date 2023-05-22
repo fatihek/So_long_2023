@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        
+    {
+        "name": "(lldb) Başlat",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/so_long",
+        "args": ["maps/map1.ber"],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "lldb"
+    }
+    ]
+}

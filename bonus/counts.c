@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:21 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/04 11:57:46 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:52:09 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	c_coin(t_vars *vars, int i, int j)
 		j = 0;
 		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
-			if (vars->map[i][j] == 'C')
+			if (vars->map[i][j] == 'C' || vars->map[i][j] == 'E')
 			{
 				vars->cants.coin_count++;
 				vars->path.spaces++;

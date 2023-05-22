@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:15:23 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/04 11:57:59 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:51:37 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ void	map_control_dsl(t_vars *vars)
 	control_components(vars->map, vars);
 	rectangular(vars, 0, 0);
 	path_finder(vars->i, vars->j, vars);
+	ft_printf("%d", vars->path.collectible_coin);
+	ft_printf("\n%d", vars->cants.coin_count);
 	if (vars->cants.coin_count == 0
 		|| vars->path.collectible_coin != vars->cants.coin_count)
 	{

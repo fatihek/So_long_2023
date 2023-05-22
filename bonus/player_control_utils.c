@@ -6,7 +6,7 @@
 /*   By: fkalaman <student.42kocaeli.com.tr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:14:58 by fkalaman          #+#    #+#             */
-/*   Updated: 2023/05/03 17:41:17 by fkalaman         ###   ########.fr       */
+/*   Updated: 2023/05/11 12:28:44 by fkalaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,7 +134,7 @@ void	exit_door(t_vars *vars)
 		exit(0);
 	}
 	if (vars->map[vars->i][vars->j] == 'E'
-		&& vars->collected_coin == vars->cants.coin_count)
+		&& vars->collected_coin + 1 == vars->cants.coin_count)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exiter_img,
 			vars->x, vars->y);
