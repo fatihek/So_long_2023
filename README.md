@@ -23,3 +23,7 @@ Use `make bonus` to compile the mandatory part.
 Use `./so_long_bonus maps/map_bonus_1.ber` to run the game.
 
 > You can find other maps in the 'maps' folder.
+
+# TO CLEAN
+
+Use `make fclean` to clean compiled files.
